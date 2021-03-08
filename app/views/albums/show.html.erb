@@ -1,0 +1,65 @@
+<div class="container w-50 text-left">
+
+<h1 class="text-center text-uppercase" style="background-color: grey; color: #00ffff; " ><%= @album.album_name %></h1>
+<div style="background-color: #ffff99">
+<h4 class="pt-3 " style="text-decoration: underline "><strong>Created by:    </strong></h4>
+<h2 class="text-uppercase text-center pb-2" style="color: blue"><%= @album.created_by %></h2>
+</div>
+  <h5 class="pt-2 text-decoration-underline " style="text-decoration: underline "><strong>Cover picture of the album:-    </strong></h5>
+  <% if @album.cover_picture.attached? %>
+        <%= image_tag(@album.cover_picture, :width => 600 , :height =>400) %>
+        <div class="text-center ">
+              <% if user_signed_in? %>
+                <%= link_to 'Remove Cover Image', delete_image_attachment_album_url(@album.cover_picture.signed_id), class: "btn btn-danger my-3 w-50",
+                                                method: :delete,
+                                                data: { confirm: 'Are you sure?' } %>
+              <% end %>
+        </div>
+  <% else %>
+          <p class="text-center">Pehle lga toh lo tbhi hi dikhegi</p>
+  <% end %>
+
+<h4 class="pt-3 " style="text-decoration: underline "><strong>Attached Images:    </strong></h4>
+<% if @album.images.attached? %>
+                <% @album.images.each do |image| %>
+                        <%= image_tag(image, :class => "illustrations bott") %>
+                        <div class="text-center">
+                        <% if user_signed_in? %>
+                              <%= link_to 'Remove Photo', delete_image_attachment_album_url(image.signed_id), class: "btn btn-danger my-3",
+                                         method: :delete,
+                                         data: { confirm: 'Are you sure?' } %>
+                        <% end %>
+                        </div>
+                <% end %>
+<% else %>
+    <p class="text-center">Not Yet</p>
+<% end %>
+
+<h4 class="pt-4" style="text-decoration: underline "><strong>Description of the album:    </strong></h4>
+<p class=" text-center pt-3 pb-2" style="background-color: #ffff99"><%= @album.description %></p>
+
+<ul style="list-style-type:none; " class="listt pt-5 d-flex justify-content-around">
+  <% if user_signed_in? %>
+  <li>
+  <h5><%= link_to "Edit", edit_album_path(@album), :class=>'btn btn-outline-warning btn-lg' %></h5>
+  </li>
+  <li>
+  <h5 ><%= link_to "Destroy", album_path(@album), 
+                  :class =>'text-decoration-none btn btn-outline-danger btn-lg',
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }%></h5>
+</li>
+<li>
+<h5><%= link_to 'Back', root_path, :class=>'btn btn-outline-dark btn-lg'  %></h5>
+</li>
+<% else %>
+<li>
+<h5><%= link_to 'Back', root_path, :class=>'btn btn-outline-dark btn-lg'  %></h5>
+</li>
+<% end %>
+</ul>
+</div>
+
+
+
+

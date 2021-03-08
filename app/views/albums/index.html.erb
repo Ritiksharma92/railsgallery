@@ -1,0 +1,28 @@
+<%= search_form_for @q do |f| %> 
+    <%= f.search_field :tags_name_cont , :placeholder=>"Search"%>
+     <%= f.submit "Search", :class =>'btn btn-primary' %>
+<% end %>
+<div class="container ">
+<h1 class="pt-3 pb-5 text-center text-uppercase" 
+    style="font-size:70px; background-color: lightgrey; color:green">My Albums</h1>
+<div class="row ">
+<% current_user.albums.each do |album| %>
+    <div class="cardd card col-4 pt-3 pb-2">
+        <div class="" style="width: 18rem;"> 
+          <% if album.cover_picture.attached? %>
+          <%= image_tag(album.cover_picture, :class => "photu", :width => 300 , :height =>200) %>
+          <% else %>
+          <%= "pehle lga toh lo tbhi hi dikhegi" %>
+          <% end %>
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= link_to album.album_name, album, :class =>'text-decoration-none howr ' %></h5>
+               <p class="card-text mt-2" style="text-decoration: underline "><strong>Created By:-  </strong></p>
+               <p class="card-text text-center border-bottom pb-2 "><%= album.created_by %></p>
+               <strong class="card-text" style="text-decoration: underline ">Tags generated:- </strong>
+               <p class="card-text text-center border-bottom pb-2" style="background-color:  "><%= album.all_tags%></p>
+            </div>
+        </div>
+    </div>
+<% end %>
+</div>
+</div>

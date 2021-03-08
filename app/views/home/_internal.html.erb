@@ -1,0 +1,20 @@
+<div class="container pt-5">
+<div class=" mb-3" style="max-width: 840px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <% if album.cover_picture.attached? %>
+          <%= image_tag(album.cover_picture, :alt => "...", :width => 300 , :height =>200) %>
+          <% else %>
+          <%= "pehle lga toh lo tbhi hi dikhegi" %>
+          <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to album.album_name, album, :class =>'text-decoration-none howr' %></h5>
+        <p class="card-text"><small class="text-muted"><%= @album.created_by %></small></p>
+        <p class="card-text"><%= @album.description %></p>
+        
+      </div>
+    </div>
+  </div>
+</div>

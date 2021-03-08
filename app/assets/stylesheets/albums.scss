@@ -1,0 +1,79 @@
+// Place all the styles related to the albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.creat{
+    color: green;
+}
+.howr {
+    color:rgb(40, 36, 255); 
+    padding: 14px 40px;
+}
+.howr:hover{
+    
+    border-radius: 12px;
+    padding:10px;
+    background-color: #66d9ff;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.butt{
+    padding: 11px 22px;
+    text-decoration: none;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    border-radius: 12px
+}
+.butt:hover {
+    background-color: green;
+    color: white;
+    border-radius: 12px
+}
+.butt2{
+    background-color: #80ff80;
+    color: black;
+    padding: 11px 22px;
+    text-decoration: none;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    border-radius: 12px
+}
+.butt2:hover {
+    background-color: #99ccff;
+    color: white;
+    border-radius: 12px
+}
+
+.butt3{
+    padding: 11px 22px;
+    text-decoration: none;
+    margin: 3px 2px;
+    transition-duration: 0.4s;
+    border-radius: 12px
+}
+.butt3:hover {
+    background-color: rgba(255, 0, 0, 0.782);
+    color: white;
+    border-radius: 12px
+}
+
+.listt {
+    display: inline;
+    display:flex;  
+  }
+
+  .dist {
+      color: green;
+  }
+  .bott{
+     border-bottom: 3px solid black;
+     padding-bottom: 20px;
+     padding-top: 20px;
+  }
+
+  .photu:hover{
+      transition-delay: 0.4;
+      box-shadow: 10px 10px 5px rgb(131, 131, 131);
+  }

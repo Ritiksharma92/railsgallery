@@ -1,0 +1,16 @@
+
+<% if user_signed_in? %>
+  <script type="text/javascript">
+    window.location.href="/albums"  // put your correct path in a string here
+  </script>
+<% else %>
+<div class="container">
+<h1 class="d-flex justify-content-center text-primary pt-3" >Welcome to gallery app</h1>
+<h4 class="d-flex justify-content-center text-success">Some albums of our users</h4>
+       
+   <div class="container ">
+                <%= render 'albums/internal',albums: @albums %>
+                
+   </div>
+</div>    
+<%end%>

@@ -1,0 +1,46 @@
+<%= form_with model: @album do |form| %>
+  <div>
+    <%= form.label :album_name %><br>
+    <%= form.text_field :album_name %>
+    <% @album.errors.full_messages_for(:album_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :created_by %><br>
+    <%= form.text_area :created_by %><br>
+  </div>
+
+    <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+    <% @album.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+   </div>
+
+   <div class="form-group">
+     <%= form.label :cover_picture %>
+       <%=form.file_field :cover_picture %>
+    </div>
+
+    <div class="form-group">
+     <%= form.label :images %>
+       <%=form.file_field :images , multiple: true%>
+    </div>
+
+    <div class="form-group">
+    <%= form.label :add_tags   %>
+      <%= form.text_field :all_tags, placeholder: "Tags separated with comma" %>
+    </div>
+
+    <div>
+     <%=form.check_box :published %>
+     <%= form.label :published %>
+    </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

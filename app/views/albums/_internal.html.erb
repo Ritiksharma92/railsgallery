@@ -1,0 +1,21 @@
+<% albums.each do |album| %>
+<div class="container-fluid mb-3 pt-5 bott">
+    <div class=" row g-0">
+        <div class="col-md-6 ">
+            <% if album.cover_picture.attached? %>
+              <%= image_tag(album.cover_picture, :alt => "...", :class=>'img-fluid w-100') %>
+              <% else %>
+              <%= "pehle lgane toh de tbhi hi dikhegi na bhaiyaji" %>
+              <% end %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h3 class="card-title"><%= link_to album.album_name, album, :class =>'text-uppercase text-decoration-none btn btn-info' %></h3>
+            <p class="card-text">By:  <%= album.created_by %></p>
+            <p class="">About the album:   </p>
+            <p class="card-text ml-5"><%= album.description %></p>
+          </div>
+        </div>
+    </div>
+</div>
+<%end%>
