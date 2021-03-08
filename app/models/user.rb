@@ -5,5 +5,6 @@ class User < ApplicationRecord
   has_many :albums
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, 
+         :confirmable
 end

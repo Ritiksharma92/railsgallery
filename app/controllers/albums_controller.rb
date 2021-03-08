@@ -52,7 +52,7 @@ class AlbumsController < ApplicationController
       
       private
       def album_params
-        params.require(:album).permit(:album_name, :cover_picture, :delete_image_attachment,:created_by, :description, :published, :all_tags,images: [] )
+        params.require(:album).permit(:album_name, :cover_picture, :delete_image_attachment, :created_by, :description, :published, :all_tags,images: [] )
       end
 
 end
